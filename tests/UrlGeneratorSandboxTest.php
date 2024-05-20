@@ -23,14 +23,14 @@ class UrlGeneratorSandboxTest extends TestCase
 
             return [
                 'default' => $app['url']->getDefaultParameters(),
-                'url' => $app['url']->to('/')
+                'url' => $app['url']->to('/'),
             ];
         });
 
         $app['router']->get('/second', function (Application $app) {
             return [
                 'default' => $app['url']->getDefaultParameters(),
-                'url' => $app['url']->to('/')
+                'url' => $app['url']->to('/'),
             ];
         });
 
@@ -38,12 +38,12 @@ class UrlGeneratorSandboxTest extends TestCase
 
         $this->assertEquals([
             'default' => ['param' => 'changed'],
-            'url' => 'http://changed'
+            'url' => 'http://changed',
         ], $client->responses[0]->getData(true));
 
         $this->assertEquals([
             'default' => ['param' => 'original'],
-            'url' => 'http://original'
+            'url' => 'http://original',
         ], $client->responses[1]->getData(true));
     }
 }
