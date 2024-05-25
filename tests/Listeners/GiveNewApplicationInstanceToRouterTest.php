@@ -22,7 +22,7 @@ class GiveNewApplicationInstanceToRouterTest extends TestCase
 
             return [
                 spl_object_id(app()),
-                spl_object_id(invade($route)->container)
+                spl_object_id(invade($route)->container),
             ];
         });
 
@@ -31,7 +31,7 @@ class GiveNewApplicationInstanceToRouterTest extends TestCase
 
             return [
                 spl_object_id(app()),
-                spl_object_id(invade($route)->container)
+                spl_object_id(invade($route)->container),
             ];
         });
 
